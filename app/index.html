@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flickr Fun</title>
+
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js js/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div class="flickrWrap">
+      <h1>Latest from Flickr</h1>
+      <h2 id="searchHeader">Tagged: <span>Storm</span></h2>
+      <div class="searchWrap">
+        <input type="text" id="searchTerm">
+        <button id="fireSearch" class="button">Go</button>
+      </div>
+      <div id="flickr"></div>
+    </div>
+    <!--Image Lister-->
+    <script id="image-template" type="text/template">
+    	{{#items}}
+      <div class="mod">
+        <figure>
+          <div class="imgWrap">
+            <img class="lazy ri" src="images/loader.gif" data-src="{{media.m}}">
+          </div>
+          <figcaption>
+            <span>
+              <a class="flickrTitle" href="{{link}}" target="_blank">{{title}}</a> by <a class="flickrAuthor" href="{{author}}" target="_blank">{{author}}</a>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+      {{/items}}
+    </script>
+    <!-- /Image Lister-->
+
+    <!-- build:js js/main.js -->
+    <script src="libs/jquery-1.11.3.min.js"></script>
+    <script src="libs/backbone1.2.3.min.js"></script>
+    <script src="libs/lodash3.10.1.min.js"></script>
+    <script src="libs/mustache.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
