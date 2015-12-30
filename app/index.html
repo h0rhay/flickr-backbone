@@ -22,7 +22,7 @@
         <input type="text" id="searchTerm">
         <button id="fireSearch" class="button">Go</button>
       </div>
-      <div id="flickr"></div>
+      <div id="flickrData"></div>
     </div>
     <!--Image Lister-->
     <script id="image-template" type="text/template">
@@ -30,7 +30,7 @@
       <div class="mod">
         <figure>
           <div class="imgWrap">
-            <img class="lazy ri" src="images/loader.gif" data-src="{{media.m}}">
+            <img class="lazy" src="images/loader.gif" data-src="{{media.m}}">
           </div>
           <figcaption>
             <span>
@@ -44,11 +44,17 @@
     <!-- /Image Lister-->
 
     <!-- build:js js/main.js -->
-    <script src="libs/jquery-1.11.3.min.js"></script>
-    <script src="libs/backbone1.2.3.min.js"></script>
-    <script src="libs/lodash3.10.1.min.js"></script>
-    <script src="libs/mustache.min.js"></script>
-    <script src="js/main.js"></script>
+    <script type="text/javascript" src="libs/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="libs/underscore-min.js"></script>
+    <script type="text/javascript" src="libs/backbone.1.2.3-min.js"></script>
+    <script type="text/javascript" src="libs/mustache.min.js"></script>
+
+    <script type="text/javascript" src="js/photoPanel.js"></script>
+    <script type="text/javascript" src="js/photoPanels.js"></script>
+    <script type="text/javascript" src="js/photoPanelView.js"></script>
+    <script type="text/javascript" src="js/photoPanelsView.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
     <!-- endbuild -->
   </body>
 </html>
