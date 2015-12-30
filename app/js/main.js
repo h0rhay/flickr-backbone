@@ -33,12 +33,15 @@
           success: function(){
             var photoPanelsView = new PhotoPanelsView({model: photoPanels});
             $("#flickrData").append(photoPanelsView.render().$el);
+            flickrFun.swapSrc();
+            flickrFun.removeUnwanted();
+            flickrFun.fixAuthorLinks();
           }
         });
 
 
         //flickrFun.pollFlickrBuild();
-        flickrFun.swapSrc();
+
         //$('html').on('click','#fireSearch', flickrFun.getSetSearch);
         //$('html').on('keypress', function(e) {
         //    if(e.which === 13) {
@@ -96,16 +99,16 @@
     // };
 
     /*---  Way of the Mustache = Better! ;) ---*/
-    flickrFun.pollFlickrBuild = function (){
-        $.getJSON(imageFeed, function(data) {
-            var template = $('#image-template').html(),
-                info = Mustache.to_html(template, data);
-            $('#flickr').html(info);
-            flickrFun.swapSrc();
-            flickrFun.removeUnwanted();
-            flickrFun.fixAuthorLinks();
-        });
-    };
+    // flickrFun.pollFlickrBuild = function (){
+    //     $.getJSON(imageFeed, function(data) {
+    //         var template = $('#image-template').html(),
+    //             info = Mustache.to_html(template, data);
+    //         $('#flickr').html(info);
+    //         flickrFun.swapSrc();
+    //         flickrFun.removeUnwanted();
+    //         flickrFun.fixAuthorLinks();
+    //     });
+    // };
 
     // Get rid of the nobody@flickr business for author links
     flickrFun.removeUnwanted = function (){
