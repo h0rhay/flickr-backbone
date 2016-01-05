@@ -1,4 +1,7 @@
 /* jshint devel:true */
+
+'use strict';
+
 define([
   'jquery',
   'underscore',
@@ -10,9 +13,6 @@ define([
   'views/photoPanelsView'], function($, _, Backbone, Mustache, PhotoPanel, PhotoPanels, PhotoPanelView, PhotoPanelsView){
 
       var initialize = function(){
-          (function (){
-
-              'use strict';
 
               // var imageFeed = 'http://api.flickr.com/services/feeds/photos_public.gne?tags=storm&tagmode=any&format=json&jsoncallback=?',
               var flickrFun = {};
@@ -177,7 +177,6 @@ define([
 
               return flickrFun.init();
 
-          }());
       }
 
       return {
