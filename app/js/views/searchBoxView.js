@@ -8,11 +8,23 @@ define([
     var SearchBoxView = Backbone.View.extend({
 
       events: {
-        "click #fireSearch" : "handleSearch"
+        "click #fireSearch" : "handleSearch",
+        "onkeypress": "handleSearch"
       },
 
-      handleSearch: function(){
+      handleSearch: function(e){
+        var searchTerm = $('#searchTerm').val(),
+            searchHeader = $('#searchHeader span');
+        this.tag = searchTerm;
+        Backbone.Events.trigger('search-tag-changed', searchTerm);
+        // imageFeed = 'http://api.flickr.com/services/feeds/photos_public.gne?tags='+searchTerm+'&tagmode=any&format=json&jsoncallback=?';
+        // console.log(imageFeed);
+        // searchHeader.text(searchTerm);
+        // photoPanels.fetch();
+      },
 
+      getTag: function() {
+        return this.tag;
       },
 
       render: function(){

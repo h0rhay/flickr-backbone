@@ -44,19 +44,20 @@ define([
                   var searchBox = new SearchBox();
                   var searchBoxView = new SearchBoxView();
                   var photoPanels = new PhotoPanels();
+                  var photoPanelsView = new PhotoPanelsView({ collection: photoPanels });
 
                   $(".searchWrap").append(searchBoxView.render().$el);
 
-                  photoPanels.fetch({
-                    success: function(){
-                      var photoPanelsView = new PhotoPanelsView({model: photoPanels});
-                      $("#flickrData").append(photoPanelsView.render().$el);
+                  //photoPanels.fetch({
+                    //success: function(){
+                      // var photoPanelsView = new PhotoPanelsView({model: photoPanels});
+                      //$("#flickrData").append(photoPanelsView.render().$el);
                       // Manipulations
-                      flickrFun.swapSrc();
-                      flickrFun.removeUnwanted();
-                      flickrFun.fixAuthorLinks();
-                    }
-                  });
+                      //flickrFun.swapSrc();
+                      //flickrFun.removeUnwanted();
+                      //flickrFun.fixAuthorLinks();
+                    //}
+                  //});
 
 
                   //flickrFun.pollFlickrBuild();
