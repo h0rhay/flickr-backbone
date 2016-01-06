@@ -1,10 +1,11 @@
-# flickr-goodness
+# flickr-backbone
 
 - A responsive Flickr gallery with lazy loading and tag search functionality
-- Using front end build stuff like:
+- Using front end frameworks & build stuff like:
+-- Backbone
 -- gulp
 -- sass
--- require with browserify
+-- require js
 -- and some simple templating with mustache js
 
 I've published the project here:
