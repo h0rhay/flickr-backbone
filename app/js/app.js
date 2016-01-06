@@ -8,9 +8,12 @@ define([
   'backbone',
   'mustache',
   'models/photoPanel',
+  'models/searchBox',
   'collections/photoPanels',
+  //'collections/searchBoxes',
   'views/photoPanelView',
-  'views/photoPanelsView'], function($, _, Backbone, Mustache, PhotoPanel, PhotoPanels, PhotoPanelView, PhotoPanelsView){
+  'views/photoPanelsView',
+  'views/searchBoxView'], function($, _, Backbone, Mustache, PhotoPanel, SearchBox, PhotoPanels, PhotoPanelView, PhotoPanelsView, SearchBoxView){
 
       var initialize = function(){
 
@@ -38,7 +41,12 @@ define([
 
               flickrFun.ready = function () {
                   // Init Backbone views
+                  var searchBox = new SearchBox();
+                  var searchBoxView = new SearchBoxView();
                   var photoPanels = new PhotoPanels();
+
+                  $(".searchWrap").append(searchBoxView.render().$el);
+
                   photoPanels.fetch({
                     success: function(){
                       var photoPanelsView = new PhotoPanelsView({model: photoPanels});

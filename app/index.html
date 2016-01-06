@@ -18,12 +18,13 @@
     <div class="flickrWrap">
       <h1>Latest from Flickr</h1>
       <h2 id="searchHeader">Tagged: <span>Storm</span></h2>
-      <div class="searchWrap">
-        <input type="text" id="searchTerm">
-        <button id="fireSearch" class="button">Go</button>
-      </div>
+
+      <div class="searchWrap"></div>
+
       <div id="flickrData"></div>
+
     </div>
+    
     <!--Image Lister-->
     <script id="image-template" type="text/template">
     	{{#items}}
@@ -42,6 +43,8 @@
       {{/items}}
     </script>
     <!-- /Image Lister-->
+
+
 
     <!-- build:js js/main.js -->
     <script type="text/javascript" src="libs/require.js" data-main="js/entry"></script>

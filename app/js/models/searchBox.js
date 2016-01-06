@@ -3,10 +3,10 @@ define([
   'underscore',
   'backbone'], function(_, Backbone){
 
-  var PhotoPanel = Backbone.Model.extend({
+  var SearchBox = Backbone.Model.extend({
 
   });
 
-  return PhotoPanel;
+  return SearchBox;
 
 });
