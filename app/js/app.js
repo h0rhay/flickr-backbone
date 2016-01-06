@@ -151,13 +151,9 @@ define([
               }
 
               // Fire search
-              flickrFun.getSetSearch = function (){
-                  var searchTerm = $('#searchTerm').val(),
-                      searchHeader = $('#searchHeader span');
-                  imageFeed = 'http://api.flickr.com/services/feeds/photos_public.gne?tags='+searchTerm+'&tagmode=any&format=json&jsoncallback=?';
-                  searchHeader.text(searchTerm);
-                  flickrFun.pollFlickrBuild();
-              };
+              // flickrFun.getSetSearch = function (){
+              //
+              // };
 
               // Check if viz for lazy loading
               flickrFun.checkViz = function ( elm, ev ) {
