@@ -40,13 +40,13 @@ define([
               ---------------------------------------------------------------------------------- */
 
               flickrFun.ready = function () {
-                  var searchWord = "burger";
+                  var searchWord = "storm";
                   // Init Backbone views
                   var searchBox = new SearchBox();
                   //var searchBox = new SearchBox({ model: searchBox });
-                  var searchBoxView = new SearchBoxView({ searchWord: 'mud' });
+                  var searchBoxView = new SearchBoxView({ searchWord: searchWord });
                   //var searchBoxView = new SearchBoxView({ model: searchBoxView });
-                  var photoPanels = new PhotoPanels([], { searchWord: 'mud' });
+                  var photoPanels = new PhotoPanels([], { searchWord: searchWord });
 
                   $(".searchWrap").append(searchBoxView.render().$el);
 
