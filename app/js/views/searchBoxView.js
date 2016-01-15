@@ -7,21 +7,33 @@ define([
 
     var SearchBoxView = Backbone.View.extend({
 
+      initialize: function(options) {
+        searchW = options.searchWord;
+      },
+
       events: {
         "click #fireSearch" : "handleSearch"
+        //"keydown" : "handleSearch OR keyAction"
       },
 
       handleSearch: function(){
-        var searchTerm = $('#searchTerm').val(),
+        var newSearchTerm = $('#searchTerm').val(),
             searchHeader = $('#searchHeader span');
-        imageFeed = 'http://api.flickr.com/services/feeds/photos_public.gne?tags='+searchTerm+'&tagmode=any&format=json&jsoncallback=?';
+        imageFeed = 'http://api.flickr.com/services/feeds/photos_public.gne?tags='+newSearchTerm+'&tagmode=any&format=json&jsoncallback=?';
         console.log(imageFeed);
-        searchHeader.text(searchTerm);
+        searchHeader.text(newSearchTerm);
       },
+
+      // keyAction: function(e) {
+      //  var ENTER_KEY = 13;
+      //   if (e.which === ENTER_KEY) {
+      //     this.collection.add({text: this.$el.val()});
+      //   }
+      // },
 
       render: function(){
 
-        this.$el.html('<input type="text" id="searchTerm"><button id="fireSearch" class="button">Go</button>');
+        this.$el.html('<h2 id="searchHeader">Tagged: <span>'+searchW+'</span></h2><input type="text" id="searchTerm"><button id="fireSearch" class="button">Go</button>');
 
         return this;
       }
